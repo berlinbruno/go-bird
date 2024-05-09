@@ -1,4 +1,4 @@
-# Simple 2D Flappy Bird Style Game
+# Simple 2D Flappy Bird Style Game - Go Bird
 
 This project is a simple 2D game developed using Unity, inspired by the classic Flappy Bird game. Players control a bird character, navigating through obstacles by tapping the screen or pressing a key to keep the bird airborne.
 
@@ -25,3 +25,7 @@ This project is a simple 2D game developed using Unity, inspired by the classic 
 <h2>🚀 Demo</h2>
 
 [https://cdn.sanity.io/files/vesn1v9l/production/54febfd35cbea4304ceb0b6465b9ba3dad70faf9.apk](https://cdn.sanity.io/files/vesn1v9l/production/54febfd35cbea4304ceb0b6465b9ba3dad70faf9.apk)
+
+## License
+
+Feel free to use this project as you wish. No restrictions apply.
