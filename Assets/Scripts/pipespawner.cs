@@ -34,6 +34,6 @@ public class pipespawner : MonoBehaviour
     {
         float highpoint = transform.position.y + heightoffset;
         float lowpoint = transform.position.y - heightoffset + 2;
-        Instantiate(pipe,new Vector3(transform.position.x,Random.Range(highpoint,lowpoint),0),Quaternion.identity);
+        Instantiate(pipe,new Vector3(transform.position.x,Random.Range(highpoint,lowpoint),15),Quaternion.identity);
     }
 }

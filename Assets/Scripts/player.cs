@@ -16,44 +16,88 @@ public class player : MonoBehaviour
 
     
     AudioManager audioManager;
-    private void Awake(){
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    private void Awake()
+    {
+        GameObject audioObject = GameObject.FindGameObjectWithTag("Audio");
+        if (audioObject != null)
+        {
+            audioManager = audioObject.GetComponent<AudioManager>();
+        }
+        else
+        {
+            Debug.LogError("Audio object not found in the scene!");
+        }
     }
+
     void Start()
     {
-      logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<logicscript>();
-      menu = GameObject.FindGameObjectWithTag("Menu").GetComponent<menuspawner>();
+        GameObject logicObject = GameObject.FindGameObjectWithTag("Logic");
+        if (logicObject != null)
+        {
+            logic = logicObject.GetComponent<logicscript>();
+        }
+        else
+        {
+            Debug.LogError("Logic object not found in the scene!");
+        }
+
+        GameObject menuObject = GameObject.FindGameObjectWithTag("Menu");
+        if (menuObject != null)
+        {
+            menu = menuObject.GetComponent<menuspawner>();
+        }
+        else
+        {
+            Debug.LogError("Menu object not found in the scene!");
+        }
     }
+
 
     void Update()
     {
-      for (int i = 0; i < Input.touchCount; ++i)
+        for (int i = 0; i < Input.touchCount; ++i)
         {
             if (Input.GetTouch(i).phase == TouchPhase.Began)
             {
-              if(playerisalive == true)
-              {
-                 myrb.velocity = Vector2.up * speed;
-                audioManager.PlaySFX(audioManager.touch);
-              }
+                if (playerisalive == true)
+                {
+                    myrb.velocity = Vector2.up * speed;
+
+                    if (audioManager != null)
+                    {
+                        audioManager.PlaySFX(audioManager.touch);
+                    }
+                    else
+                    {
+                        Debug.LogError("AudioManager not found!");
+                    }
+                }
             }
         }
-        if(transform.position.y > 25 || transform.position.y < -25)
+
+        if (transform.position.y > 25 || transform.position.y < -25)
         {
-          playerisalive = false;
-          notvisible = true;
+            playerisalive = false;
+            notvisible = true;
         }
-        if(playerisalive == false)
+
+        if (playerisalive == false)
         {
-          transform.Rotate(Vector3.forward*5);
-          menu.gameover();
-          audioManager.PlaySFX(audioManager.death);
-         }
-         if(playerisalive == false && notvisible == true)
-         {
-          Destroy(gameObject);
-         }
+            transform.Rotate(Vector3.forward * 5);
+            menu.gameover();
+
+            if (audioManager != null)
+            {
+                audioManager.PlaySFX(audioManager.death);
+            }
+        }
+
+        if (playerisalive == false && notvisible == true)
+        {
+            Destroy(gameObject);
+        }
     }
+
     public void OnTriggerEnter2D(Collider2D Others) 
     {
        logic.addscore(1);

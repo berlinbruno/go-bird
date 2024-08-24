@@ -8,6 +8,6 @@ public class playerspawner : MonoBehaviour
     public GameObject player;
     void Start()
     {
-     Instantiate(player,Vector3.zero,Quaternion.identity);
+     Instantiate(player, new Vector3(0, 0, 5), Quaternion.identity);
     }
 }
