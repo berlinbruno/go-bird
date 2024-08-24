@@ -24,7 +24,7 @@ This project is a simple 2D game developed using Unity, inspired by the classic 
 
 <h2>🚀 Demo</h2>
 
-[https://cdn.sanity.io/files/vesn1v9l/production/54febfd35cbea4304ceb0b6465b9ba3dad70faf9.apk](https://cdn.sanity.io/files/vesn1v9l/production/54febfd35cbea4304ceb0b6465b9ba3dad70faf9.apk)
+[Download Now](https://cdn.sanity.io/files/vesn1v9l/production/486b84824d383d360961754c1a90260a988bdb2e.apk)
 
 ## License
 
